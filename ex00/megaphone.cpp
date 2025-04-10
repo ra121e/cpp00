@@ -6,14 +6,12 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 13:39:48 by athonda           #+#    #+#             */
-/*   Updated: 2025/04/10 08:27:08 by athonda          ###   ########.fr       */
+/*   Updated: 2025/04/10 14:55:54 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>		//cout
-#include <vector>		//vector container
 #include <string>		//string, find_first_not_of(), find_last_not_of()
-#include <algorithm>	//transform()
 #include <cctype>		//toupper()
 #include <numeric>		//accumulate()
 
@@ -36,50 +34,31 @@ std::string	my_trim(std::string s)
 	return (trimed);
 }
 
-/**
- * @fn my_toupper
- * @brief replace characters to upper case
- * @param[in] string
- * @return string
- * @note
- *  -std::toupper function has overload. Need to fix the type by casting
- *  -std::transform iterates toupper to each character in the string
- */
-
-std::string	my_toupper(std::string s)
-{
-	std::transform(s.begin(), s.end(), s.begin(), (int(*)(int))std::toupper);
-	return (s);
-}
-
-/**
- * @fn my_join
- * @brief combine array into one single string
- * @param[in] 2 strings
- * @return string
- */
-
-std::string	my_join(std::string a, std::string b)
-{
-	std::string result;
-
-	result = a + ' ' + b;
-	return (result);
-}
-
 int	main(int ac, char **av)
 {
-	std::string	megaphone;
+	int	i;
+	int	j;
 
 	if (ac == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-	else
 	{
-		std::vector<std::string> args(av + 1, av + ac);
-		std::transform(args.begin(), args.end(), args.begin(), &my_trim);
-		std::transform(args.begin(), args.end(), args.begin(), &my_toupper);
-		megaphone = std::accumulate(args.begin() + 1, args.end(), args[0], &my_join);
-		std::cout << megaphone << std::endl;
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
+		return (0);
+	}
+	for (i = 1; i < ac; ++i)
+	{
+		std::string	s(av[i]);
+		s = my_trim(s);
+		for (j = 0; s[j] != '\0'; ++j)
+		{
+			s[j] = std::toupper(static_cast<unsigned char>(s[j]));
+		}
+		std::cout << s;
+		if (i < ac - 1)
+		{
+			std::cout << " ";
+		}
+		else
+			std::cout << std::endl;
 	}
 	return (0);
 }
