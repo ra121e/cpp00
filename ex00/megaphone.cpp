@@ -6,16 +6,23 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 13:39:48 by athonda           #+#    #+#             */
-/*   Updated: 2025/04/07 09:43:14 by athonda          ###   ########.fr       */
+/*   Updated: 2025/04/10 08:27:08 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>		//cout
 #include <vector>		//vector container
-#include <string>		//string
-#include <algorithm>	//stansform()
-#include <cctype>		//toupper
+#include <string>		//string, find_first_not_of(), find_last_not_of()
+#include <algorithm>	//transform()
+#include <cctype>		//toupper()
 #include <numeric>		//accumulate()
+
+/**
+ * @fn my_trim
+ * @brief truncate string into substring
+ * @param[in] string
+ * @return string
+ */
 
 std::string	my_trim(std::string s)
 {
@@ -29,11 +36,28 @@ std::string	my_trim(std::string s)
 	return (trimed);
 }
 
+/**
+ * @fn my_toupper
+ * @brief replace characters to upper case
+ * @param[in] string
+ * @return string
+ * @note
+ *  -std::toupper function has overload. Need to fix the type by casting
+ *  -std::transform iterates toupper to each character in the string
+ */
+
 std::string	my_toupper(std::string s)
 {
 	std::transform(s.begin(), s.end(), s.begin(), (int(*)(int))std::toupper);
 	return (s);
 }
+
+/**
+ * @fn my_join
+ * @brief combine array into one single string
+ * @param[in] 2 strings
+ * @return string
+ */
 
 std::string	my_join(std::string a, std::string b)
 {
