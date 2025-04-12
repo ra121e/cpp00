@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 17:04:12 by athonda           #+#    #+#             */
-/*   Updated: 2025/04/12 17:53:11 by athonda          ###   ########.fr       */
+/*   Updated: 2025/04/12 18:26:11 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ std::string	Contact::getPhoneNumber() const
 
 std::string	Contact::getDarkestSecret() const
 {
-	return (darkSecret);
+	return (darkestSecret);
 }
 
 /**
@@ -61,7 +61,7 @@ void	Contact::setLastName(const std::string &s)
 	this->lastName = s;
 }
 
-void	Contact::setnickName(const std::string &s)
+void	Contact::setNickName(const std::string &s)
 {
 	this->nickName = s;
 }

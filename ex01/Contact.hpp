@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 15:38:50 by athonda           #+#    #+#             */
-/*   Updated: 2025/04/12 17:49:12 by athonda          ###   ########.fr       */
+/*   Updated: 2025/04/12 18:24:05 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ public:
 
 	void	setFirstName(const std::string &s);
 	void	setLastName(const std::string &s);
-	void	setnickName(const std::string &s);
+	void	setNickName(const std::string &s);
 	void	setPhoneNumber(const std::string &s);
 	void	setDarkestSecret(const std::string &s);
 
