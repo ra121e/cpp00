@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 15:38:50 by athonda           #+#    #+#             */
-/*   Updated: 2025/04/12 16:43:56 by athonda          ###   ########.fr       */
+/*   Updated: 2025/04/12 17:28:31 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,12 @@ public:
 	std::string	getNickName() const;
 	std::string	getPhoneNumber() const;
 	std::string	getDarkestSecret() const;
-	C++
+
+	void	setFirstName(const std::string &s);
+	void	setLastName(const std::string &s);
+	void	setNickName(const std::string &s);
+	void	setPhoneNumber(const std::string &s);
+	void	setDarkestSecret(const std::string &s);
 };
 
 #endif
