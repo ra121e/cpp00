@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 17:04:12 by athonda           #+#    #+#             */
-/*   Updated: 2025/04/12 17:32:23 by athonda          ###   ########.fr       */
+/*   Updated: 2025/04/12 17:53:11 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,4 +74,13 @@ void	Contact::setPhoneNumber(const std::string &s)
 void	Contact::setDarkestSecret(const std::string &s)
 {
 	this->darkestSecret = s;
+}
+
+void	Contact::displayDetails() const
+{
+	std::cout << "First Name: " << firstName << std::endl;
+	std::cout << "Last Name: " << lastName << std::endl;
+	std::cout << "Nickname: " << nickName << std::endl;
+	std::cout << "Phone Number: " << phoneNumber << std::endl;
+	std::cout << "Darkest Secret: " << darkestSecret << std::endl;
 }
