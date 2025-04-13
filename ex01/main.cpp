@@ -6,19 +6,20 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 18:53:58 by athonda           #+#    #+#             */
-/*   Updated: 2025/04/12 18:25:39 by athonda          ###   ########.fr       */
+/*   Updated: 2025/04/13 19:01:31 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Contact.hpp"
+#include "PhoneBook.hpp"
 
 int	main(void)
 {
 	std::string	command;
-
+	PhoneBook	phonebook;
+/*
 	Contact contact;
-
     // 連絡先情報を設定
 	contact.setFirstName("John");
 	contact.setLastName("Doe");
@@ -38,26 +39,26 @@ int	main(void)
 	// displayDetails メソッドのテスト
 	std::cout << "\nDisplay method test:" << std::endl;
 	contact.displayDetails();
-	/*
+*/
 	while (1)
 	{
-		std::cout << "Enter command (ADD, SEARCH, EXIT); ";
-		std::cin command;
+		std::cout << "Enter command (ADD, SEARCH, EXIT): ";
+		std::cin >> command;
 
 		if (command == "ADD")
 		{
-			// TODO ADD operation
+			phonebook.addContact();
 		}
 		else if (command == "SEARCH")
 		{
-			// TODO SEARCH operation
+			phonebook.searchContact();
 		}
 		else if (command == "EXIT")
 		{
 			// TODO EXIT operation
 			break ;
 		}
+		command = "";
 	}
-	*/
 	return (0);
 }
