@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 13:22:37 by athonda           #+#    #+#             */
-/*   Updated: 2025/04/14 01:17:45 by athonda          ###   ########.fr       */
+/*   Updated: 2025/04/14 15:39:12 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,20 +26,21 @@ void	PhoneBook::addContact()
 {
 	std::string	input;
 
+//	std::cin.ignore();
 	std::cout << "Enter First Name: ";
-	std::cin >> input;
+	std::getline(std::cin, input);
 	contacts[nextIndex].setFirstName(input);
 	std::cout << "Enter Last Name: ";
-	std::cin >> input;
+	std::getline(std::cin, input);
 	contacts[nextIndex].setLastName(input);
 	std::cout << "Enter Nickname: ";
-	std::cin >> input;
+	std::getline(std::cin, input);
 	contacts[nextIndex].setNickName(input);
 	std::cout << "Enter Phone Number: ";
-	std::cin >> input;
+	std::getline(std::cin, input);
 	contacts[nextIndex].setPhoneNumber(input);
 	std::cout << "Enter Darkest Secret: ";
-	std::cin >> input;
+	std::getline(std::cin, input);
 	contacts[nextIndex].setDarkestSecret(input);
 
 	nextIndex = (nextIndex + 1) % 8;

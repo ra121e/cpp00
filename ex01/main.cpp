@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 18:53:58 by athonda           #+#    #+#             */
-/*   Updated: 2025/04/13 19:01:31 by athonda          ###   ########.fr       */
+/*   Updated: 2025/04/14 12:24:28 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	main(void)
 	while (1)
 	{
 		std::cout << "Enter command (ADD, SEARCH, EXIT): ";
-		std::cin >> command;
+		std::getline(std::cin, command);
 
 		if (command == "ADD")
 		{
