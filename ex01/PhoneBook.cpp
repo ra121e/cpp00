@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 13:22:37 by athonda           #+#    #+#             */
-/*   Updated: 2025/04/14 20:21:08 by athonda          ###   ########.fr       */
+/*   Updated: 2025/04/16 13:38:07 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,9 +107,4 @@ void PhoneBook::displayContacts() const
 		}
 		std::cout << std::setw(10) << nickName << std::endl;
 	}
-}
-
-void displayContactDetails(int index)
-{
-
 }
