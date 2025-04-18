@@ -6,13 +6,16 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 13:22:37 by athonda           #+#    #+#             */
-/*   Updated: 2025/04/16 13:38:07 by athonda          ###   ########.fr       */
+/*   Updated: 2025/04/18 17:12:08 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <string>
-#include <iomanip>
+#include <string>			// string
+#include <sstream>			// stringstream
+#include <iomanip>			// setw()
+#include <cctype>			// isdigit()
+#include <cstdlib>			// atoi()
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
 
@@ -46,9 +49,7 @@ void	PhoneBook::addContact()
 	nextIndex = (nextIndex + 1) % 8;
 
 	if (count < 8)
-	{
 		count = count + 1;
-	}
 }
 
 void PhoneBook::searchContact() const
@@ -60,19 +61,34 @@ void PhoneBook::searchContact() const
 	}
 	displayContacts();
 
+	std::string input;
 	int	index;
 	std::cout << "Enter index to display detail [0-" << count - 1 << "]: ";
-	std::cin >> index;
+	std::getline(std::cin, input);
+
+	bool	yesDigit = true;
+	for (std::string::const_iterator it = input.begin(); it != input.end(); ++it)
+	{
+		if (!isdigit(*it))
+			yesDigit = false;
+	}
+
+	if (!yesDigit || input.empty())
+	{
+		std::cout << "Invalid Input" << std::endl;
+		return ;
+	}
+
+	std::stringstream	ss;
+	ss.str(input);
+	ss.operator>>(index);
+	if (index < 0 || index >= count)
+	{
+		std::cout << "Index out of range" << std::endl;
+		return ;
+	}
 
 	contacts[index].displayDetails();
-//	contacts[0].displayDetails();
-//	contacts[1].displayDetails();
-//	contacts[2].displayDetails();
-//	contacts[3].displayDetails();
-//	contacts[4].displayDetails();
-//	contacts[5].displayDetails();
-//	contacts[6].displayDetails();
-//	contacts[7].displayDetails();
 }
 
 void PhoneBook::displayContacts() const
