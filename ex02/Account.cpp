@@ -6,11 +6,12 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 04:23:30 by athonda           #+#    #+#             */
-/*   Updated: 2025/04/19 13:09:34 by athonda          ###   ########.fr       */
+/*   Updated: 2025/04/19 16:47:08 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>			// std::cout
+#include <ctime>			// std::time_t, std::localtime()
 #include "Account.hpp"
 
 // intializing static variables
@@ -38,6 +39,12 @@ Account::Account(int initial_deposit) :
 // destructor
 ~Account()
 
+// private constructor (no need)
+Account::Account(void)
+{
+
+}
+
 // getter
 static int	Account::getNbAccounts(void)
 {
@@ -64,4 +71,14 @@ static void	Account::displayAccountsInfos(void)
 
 }
 
-//
+// time set function
+static void	Account::_displayTimestamp(void)
+{
+	std::time_t	now = std::time(NULL);
+	std::tm *tm = std::localtime(&now);
+
+	std::cout << "[";
+	std::cout << std::setfill('0') << std::setw(4) << tm->tm_year + 1900;
+	std::cout << "]";
+
+}
