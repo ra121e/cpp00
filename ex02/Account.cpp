@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 04:23:30 by athonda           #+#    #+#             */
-/*   Updated: 2025/04/19 22:08:51 by athonda          ###   ########.fr       */
+/*   Updated: 2025/04/19 23:56:51 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,5 +91,37 @@ void	Account::_displayTimestamp(void)
 	std::cout << std::setfill('0') << std::setw(2) << tm->tm_min;
 	std::cout << std::setfill('0') << std::setw(2) << tm->tm_sec;
 	std::cout << "]";
+}
 
+// member functions
+int	Account::checkAmount(void) const
+{
+	return (this->_amount);
+}
+
+void	Account::displayStatus(void) const
+{
+	this->_displayTimestamp();
+	std::cout << "index:" << this->_accountIndex << ";";
+	std::cout << "amount:" << this->_amount << ";";
+	std::cout << "deposits:" << this->_nbDeposits << ";";
+	std::cout << "withdrawals:" << this->_nbWithdrawals;
+	std::cout << std::endl;
+}
+
+void	Account::makeDeposit(int deposit)
+{
+	int	p_amount = this->_amount;
+	this->_amount += deposit;
+	this->_nbDeposits++;
+
+	_totalAmount += deposit;
+	_totalNbDeposits++;
+
+	this->_displayTimestamp();
+	std::cout << "index:" << _accountIndex << ";";
+	std::cout << "p_amount:" << p_amount << ";";
+	std::cout << "deposit:" << deposit << ";";
+	std::cout << "amount:" << _amount << ";";
+	std::cout << "nb_deposits:" << _nbDeposits << std::endl;
 }
