@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 04:23:30 by athonda           #+#    #+#             */
-/*   Updated: 2025/04/18 21:35:14 by athonda          ###   ########.fr       */
+/*   Updated: 2025/04/18 22:21:52 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,19 @@
 #include "Account.hpp"
 
 // Constructor
-Account::Account(int initial_deposit)
+Account::Account(int initial_deposit) :
+	_accountIndex(_nbAccounts),
+	_amount(initial_deposit),
+	_nbDeposits(0),
+	_nbWithdrawals(0)
 {
 	_nbAccounts++;
 	_totalAmount = _totalAmount + initial_deposit;
-	_totalNbDeposits++;
-	_totalNbWithdrawals = 0;
+
+	_displayTimestamp();
+	std::cout << "index" << _accountIndex << ";";
+	std::cout << "amount" << _amount << ";";
+	std::cout << "created" << std::endl;
 }
 
 // destructor
@@ -50,3 +57,5 @@ static void	Account::displayAccountsInfos(void)
 {
 
 }
+
+//
