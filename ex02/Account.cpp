@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 04:23:30 by athonda           #+#    #+#             */
-/*   Updated: 2025/04/19 17:55:23 by athonda          ###   ########.fr       */
+/*   Updated: 2025/04/19 22:08:51 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,13 @@ void	Account::_displayTimestamp(void)
 	std::tm *tm = std::localtime(&now);
 
 	std::cout << "[";
-	std::cout << std::setfill('0') << std::setw(6) << tm->tm_year + 1900;
+	std::cout << std::setfill('0') << std::setw(4) << tm->tm_year + 1900;
+	std::cout << std::setfill('0') << std::setw(2) << tm->tm_mon + 1;
+	std::cout << std::setfill('0') << std::setw(2) << tm->tm_mday;
+	std::cout << "_";
+	std::cout << std::setfill('0') << std::setw(2) << tm->tm_hour;
+	std::cout << std::setfill('0') << std::setw(2) << tm->tm_min;
+	std::cout << std::setfill('0') << std::setw(2) << tm->tm_sec;
 	std::cout << "]";
 
 }
