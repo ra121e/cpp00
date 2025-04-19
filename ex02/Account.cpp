@@ -6,12 +6,18 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 04:23:30 by athonda           #+#    #+#             */
-/*   Updated: 2025/04/18 22:21:52 by athonda          ###   ########.fr       */
+/*   Updated: 2025/04/19 13:09:34 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>			// std::cout
 #include "Account.hpp"
+
+// intializing static variables
+static int	_nbAccounts = 0;
+static int	_totalAmount = 0;
+static int	_totalNbDeposits = 0;
+static int	_totalNbWithdrawals = 0;
 
 // Constructor
 Account::Account(int initial_deposit) :
