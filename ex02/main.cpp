@@ -19,6 +19,13 @@ int	main(void)
 	bcc.makeDeposit(987);
 	acc.makeDeposit(318873);
 	Account::displayAccountsInfos();
+	acc.makeWithdrawal(1);
+	acc.makeWithdrawal(329843);
+	acc.makeWithdrawal(34);
+	bcc.makeWithdrawal(10);
+	ccc.makeWithdrawal(100);
+	ccc.makeWithdrawal(31431313);
+	Account::displayAccountsInfos();
 
 
 

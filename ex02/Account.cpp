@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 04:23:30 by athonda           #+#    #+#             */
-/*   Updated: 2025/04/19 23:56:51 by athonda          ###   ########.fr       */
+/*   Updated: 2025/04/20 07:59:22 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,10 +111,12 @@ void	Account::displayStatus(void) const
 
 void	Account::makeDeposit(int deposit)
 {
+	//update account variables
 	int	p_amount = this->_amount;
 	this->_amount += deposit;
 	this->_nbDeposits++;
 
+	//update total variables
 	_totalAmount += deposit;
 	_totalNbDeposits++;
 
@@ -124,4 +126,32 @@ void	Account::makeDeposit(int deposit)
 	std::cout << "deposit:" << deposit << ";";
 	std::cout << "amount:" << _amount << ";";
 	std::cout << "nb_deposits:" << _nbDeposits << std::endl;
+}
+
+bool	Account::makeWithdrawal(int withdrawal)
+{
+	// display common parts
+	this->_displayTimestamp();
+	std::cout << "index:" << _accountIndex << ";";
+	std::cout << "p_amount:" << _amount << ";";
+
+	// check amount
+	if (withdrawal > this->_amount)
+	{
+		std::cout << "Withdrawal:refused" << std::endl;
+		return (false);
+	}
+
+	// update private variables
+	this->_amount -= withdrawal;
+	this->_nbWithdrawals++;
+
+	this->_totalAmount -= withdrawal;
+	this->_totalNbWithdrawals++;
+
+	std::cout << "withdrawal:" << withdrawal << ";";
+	std::cout << "amount:" << _amount << ";";
+	std::cout << "nb_withdrawal:" << this->_nbWithdrawals << std::endl;
+
+	return (true);
 }
