@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 04:23:30 by athonda           #+#    #+#             */
-/*   Updated: 2025/04/20 08:27:05 by athonda          ###   ########.fr       */
+/*   Updated: 2025/04/20 15:10:37 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ Account::Account(int initial_deposit) :
 	_totalAmount = _totalAmount + initial_deposit;
 
 	_displayTimestamp();
-	std::cout << "index" << _accountIndex << ";";
-	std::cout << "amount" << _amount << ";";
+	std::cout << "index:" << _accountIndex << ";";
+	std::cout << "amount:" << _amount << ";";
 	std::cout << "created" << std::endl;
 }
 
@@ -41,8 +41,8 @@ Account::Account(int initial_deposit) :
 Account::~Account(void)
 {
 	Account::_displayTimestamp();
-	std::cout << "index" << this->_accountIndex << ";";
-	std::cout << "amount" << this->_amount << ";";
+	std::cout << "index:" << this->_accountIndex << ";";
+	std::cout << "amount:" << this->_amount << ";";
 	std::cout << "closed" << std::endl;
 }
 
@@ -95,7 +95,7 @@ void	Account::_displayTimestamp(void)
 	std::cout << std::setfill('0') << std::setw(2) << tm->tm_hour;
 	std::cout << std::setfill('0') << std::setw(2) << tm->tm_min;
 	std::cout << std::setfill('0') << std::setw(2) << tm->tm_sec;
-	std::cout << "]";
+	std::cout << "] ";
 }
 
 // member functions
