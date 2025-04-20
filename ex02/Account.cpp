@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 04:23:30 by athonda           #+#    #+#             */
-/*   Updated: 2025/04/20 15:10:37 by athonda          ###   ########.fr       */
+/*   Updated: 2025/04/20 15:23:12 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,7 +143,7 @@ bool	Account::makeWithdrawal(int withdrawal)
 	// check amount
 	if (withdrawal > this->_amount)
 	{
-		std::cout << "Withdrawal:refused" << std::endl;
+		std::cout << "withdrawal:refused" << std::endl;
 		return (false);
 	}
 
@@ -156,7 +156,7 @@ bool	Account::makeWithdrawal(int withdrawal)
 
 	std::cout << "withdrawal:" << withdrawal << ";";
 	std::cout << "amount:" << _amount << ";";
-	std::cout << "nb_withdrawal:" << this->_nbWithdrawals << std::endl;
+	std::cout << "nb_withdrawals:" << this->_nbWithdrawals << std::endl;
 
 	return (true);
 }
