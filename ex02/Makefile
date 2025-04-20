@@ -6,7 +6,7 @@
 #    By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/17 04:23:52 by athonda           #+#    #+#              #
-#    Updated: 2025/04/19 16:49:05 by athonda          ###   ########.fr        #
+#    Updated: 2025/04/20 08:22:06 by athonda          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = Banking
 
 SRC_DIR = src
 SRC_F	=	Account.cpp \
-			main.cpp
+			tests.cpp
 
 SRC = $(SRC_F:%.c=%.c)
 
