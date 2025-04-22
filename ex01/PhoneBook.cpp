@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 13:22:37 by athonda           #+#    #+#             */
-/*   Updated: 2025/04/18 17:12:08 by athonda          ###   ########.fr       */
+/*   Updated: 2025/04/22 21:27:48 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,21 +29,44 @@ void	PhoneBook::addContact()
 {
 	std::string	input;
 
-//	std::cin.ignore();
-	std::cout << "Enter First Name: ";
-	std::getline(std::cin, input);
+	do{
+		std::cout << "Enter First Name: ";
+		std::getline(std::cin, input);
+		if (input.empty())
+			std::cout << "Field cannot be empty. try again." << std::endl;
+	} while (input.empty());
 	contacts[nextIndex].setFirstName(input);
-	std::cout << "Enter Last Name: ";
-	std::getline(std::cin, input);
+
+	do{
+		std::cout << "Enter Last Name: ";
+		std::getline(std::cin, input);
+		if (input.empty())
+			std::cout << "Field cannot be empty. try again." << std::endl;
+	} while (input.empty());
 	contacts[nextIndex].setLastName(input);
-	std::cout << "Enter Nickname: ";
-	std::getline(std::cin, input);
+
+	do{
+		std::cout << "Enter Nickname: ";
+		std::getline(std::cin, input);
+		if (input.empty())
+			std::cout << "Field cannot be empty. try again." << std::endl;
+	} while (input.empty());
 	contacts[nextIndex].setNickName(input);
-	std::cout << "Enter Phone Number: ";
-	std::getline(std::cin, input);
+
+	do{
+		std::cout << "Enter Phone Number: ";
+		std::getline(std::cin, input);
+		if (input.empty())
+			std::cout << "Field cannot be empty. try again." << std::endl;
+	} while (input.empty());
 	contacts[nextIndex].setPhoneNumber(input);
-	std::cout << "Enter Darkest Secret: ";
-	std::getline(std::cin, input);
+
+	do{
+		std::cout << "Enter Darkest Secret: ";
+		std::getline(std::cin, input);
+		if (input.empty())
+			std::cout << "Field cannot be empty. try again." << std::endl;
+	} while (input.empty());
 	contacts[nextIndex].setDarkestSecret(input);
 
 	nextIndex = (nextIndex + 1) % 8;
